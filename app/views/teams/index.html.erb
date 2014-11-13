@@ -1,0 +1,12 @@
+<% @team.each  do|t| %>
+<div>
+	<h1> <%= t.name %></h1>
+		<a href="/teams/<%= t.id%>/edit">Edit Team</a>
+	<h2> <%=t.country %></h2>
+		<% t.players.each do |p| %>
+			<h3> <%= p.name %> <%= p.jersey %>
+			<a href="/teams/<%= t.id%>/players/<%=p.id%>/edit">Edit Player</a>
+			</h3>
+		<% end %>
+	</div>
+<% end %>

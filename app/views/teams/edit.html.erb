@@ -1,0 +1,10 @@
+<%= form_for @team, method: "put" do|f| %>
+	<%= f.text_field(:name, placeholder: "Team Name") %>
+	<%= f.text_field(:country, placeholder: "Country") %>
+	<%= submit_tag("Submit New Team") %>
+<% end %>
+
+<%= form_for @team, method: "delete"  do |f| %>
+
+	<%= submit_tag("Delete Team") %>
+<% end %>

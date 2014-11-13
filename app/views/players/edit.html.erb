@@ -1,0 +1,15 @@
+
+<!-- in your rake route here's what route you would use:
+ PUT    /teams/:team_id/players/:id(.:format)      players#update -->
+
+<%= form_for [@team, @player], method: "put"  do |f| %>
+
+	<%= f.text_field(:name) %>
+	<%= f.text_field(:jersey) %>
+	<%= submit_tag("Edit Player") %>
+<% end %>
+
+<%= form_for [@team, @player], method: "delete"  do |f| %>
+
+	<%= submit_tag("Delete Player") %>
+<% end %>

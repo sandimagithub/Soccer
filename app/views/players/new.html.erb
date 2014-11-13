@@ -1,0 +1,14 @@
+<!-- Here's the route as seen from rake routes:
+new_team_player GET    /teams/:team_id/players/new(.:format)      players#new -->
+
+<!-- Players are nested within a team, that is why we need to specify where to grab the teams, via a URL  -->
+<!-- So, this will need to be referenced in the URL below -->
+
+<!-- url: team_players_path(params[:team_id] is taken out and @team, @player is added in b/c of the change we made in the controller.  taking two resources and relating them in this form helper-->
+
+<%= form_for [@team, @player] do |f| %>
+
+	<%= f.text_field(:name, placeholder: "Player Name") %>
+	<%= f.text_field(:jersey, placeholder: "Jersey Number") %>
+	<%= submit_tag("Submit New Player") %>
+<% end %>
